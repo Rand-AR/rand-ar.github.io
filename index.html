@@ -6,12 +6,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
 
-    <title>ReconFusion</title>
+    <title>RandAR</title>
 
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <meta property="og:image" content="https://reconfusion.github.io/img/overview_combined.png">
+    <meta property="og:image" content="">
     <meta property="og:image:type" content="image/png">
     <meta property="og:image:width" content="1711">
     <meta property="og:image:height" content="576">
@@ -32,7 +32,7 @@
     <meta name="twitter:image" content="" />
 
 
-<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎨</text></svg>">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎲</text></svg>">
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
@@ -42,23 +42,6 @@
 	<link rel="stylesheet"
         href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
 
-
-	<!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-8ZERS5BVPS"></script>
-  <script>
-	window.dataLayer = window.dataLayer || [];
-	function gtag(){dataLayer.push(arguments);}
-	gtag('js', new Date());
-
-	gtag('config', 'G-8ZERS5BVPS');
-  </script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.8.0/codemirror.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.5.3/clipboard.min.js"></script>
-    <script type="text/javascript" async
-        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
-    </script>
 	<script defer src="js/fontawesome.all.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
 
@@ -102,7 +85,7 @@
                     </li>
                     <wbr>
                     <li>
-                        <a href="https://research.adobe.com/person/hao-tan/">
+                        <a href="https://www.cs.unc.edu/~airsplay/">
                             Hao Tan
                         </a><sup>3</sup>
                     </li>
@@ -125,10 +108,10 @@
 <div class="col-md-3">
     </div>
             <div class="col-md-12 text-center">
-                <sup>1</sup>University of Illinois Urbana-Champaign, &nbsp <sup>2</sup>Massachusetts Institute of Technology, &nbsp <sup>3</sup>Adobe Research &nbsp; &nbsp; <br>* equal contribution
+                <sup>1</sup>University of Illinois Urbana-Champaign, &nbsp <sup>2</sup>Massachusetts Institute of Technology, &nbsp <sup>3</sup>Adobe Research &nbsp; &nbsp; <br>* Equal Contribution
 
             </div>
-
+<br>
         <div class="row text-center">
 					
 			     <span class="link-block">
@@ -213,7 +196,7 @@
         
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
-            <h3> <font color="#118ab2">Random Order</font> Unlocks New Capabilities for Decoder-only AR </h3>
+            <h3> <font color="#118ab2">Random Order</font> Unlocks New Capabilities for Decoder-only AR without Finetuning</h3>
             <br>
             <h4> [1] <font color="#ef486e">Parallel Decoding</font> with KV-Cache: 2.5x Acceleration </h4>
             <p class="text-justify">
@@ -250,8 +233,10 @@
             <div class="col-md-8 col-md-offset-2">
             <h4> [5] <font color="#ef486e">Bi-directional Feature Encoding</font>  </h4>
             <p class="text-justify">
-                
+                By training on random orders, RandAR have acquired the ability of understanding bi-directional contexts and lead to better feature encoding, such as for finding feature correspondences.
             </p>
+            <img id="bi_directional_feature_encoding" width="98%" src="img/feature_encoding.png">
+
                 </div>
             </div>
 
@@ -259,7 +244,10 @@
                 <div class="col-md-8 col-md-offset-2">
                 <h3> Conclusions  </h3>
                 <p class="text-justify">
-                    
+                    We introduce RandAR, a GPT-style causal decoder-only transformer that generates image tokens autoregressively in random orders. 
+                    Our RandAR achieves this with specially designed position instruction tokens representing the location of next-token prediction. 
+                    Despite the challenges of learning random order generation, RandAR achieves comparable performance with raster-order counterparts. 
+                    Moreover, RandAR shows several new zero-shot applications for decoder-only models, including parallel decoding for 2.5x acceleration, inpainting, outpainting, resolution extrapolation, and feature extraction with bi-directional contexts. We hope RandAR inspires further exploration of unidirectional decoder-only models for visual tasks.
                 </p>
                    
                 </div>
@@ -290,7 +278,7 @@
                 </h3>
                 <p class="text-justify">
                     <br><br>
-                The website template was borrowed from <a href="http://mgharbi.com/">Michaël Gharbi</a> and <a href="https://dorverbin.github.io/refnerf">Ref-NeRF</a>.
+                The website template was borrowed from <a href="http://mgharbi.com/">Michaël Gharbi</a>, <a href="https://dorverbin.github.io/refnerf">Ref-NeRF</a>, and <a href="https://reconfusion.github.io/">ReconFusion</a>.
                 </p>
             </div>
         </div>
